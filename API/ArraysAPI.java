@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * Copyright (c) 2017 XiaoMi Inc. All Rights Reserved.
  *

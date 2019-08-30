@@ -3,14 +3,14 @@ package class_06;
 import java.util.*;
 
 public class Code_01_BFS {
-    public static class Node {
-        public int value;
-        public int in;
-        public int out;
-        public ArrayList<Node> nexts;
-        public ArrayList<Edge> edges;
+    public static class Node <T> {
+        public  T value;
+        public int in;          //入度
+        public int out;         //出度
+        public ArrayList<Node> nexts;       //该节点的领接节点
+        public ArrayList<Edge> edges;       //从该节点出发的边
 
-        public Node(int value) {
+        public Node(T value) {
             this.value = value;
             in = 0;
             out = 0;
@@ -42,7 +42,7 @@ public class Code_01_BFS {
 
     }
 
-	public static void bfs(Node node) {
+	public static void bfs(Node<Integer> node) {
 		if (node == null) {
 			return;
 		}
@@ -51,9 +51,9 @@ public class Code_01_BFS {
 		queue.add(node);
 		map.add(node);
 		while (!queue.isEmpty()) {
-			Node cur = queue.poll();
+			Node<Integer> cur = queue.poll();
 			System.out.println(cur.value);
-			for (Node next : cur.nexts) {
+			for (Node<Integer> next : cur.nexts) {
 				if (!map.contains(next)) {
 					map.add(next);
 					queue.add(next);

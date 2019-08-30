@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class GraphGenerator {
+public class  GraphGenerator {
 	public static class Node {
 		public int value;
 		public int in;
@@ -44,6 +44,11 @@ public class GraphGenerator {
 
 	}
 
+	/*
+	创建图
+	输入: k 行,每行三个数字: weight, from, to. 表示一个从from点指向to点,权重为weight
+    输出: Graph类
+	 */
 	public static Graph createGraph(Integer[][] matrix) {
 		Graph graph = new Graph();
 		for (int i = 0; i < matrix.length; i++) {

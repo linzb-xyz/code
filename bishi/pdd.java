@@ -101,6 +101,21 @@ public class pdd {
             this.id = id;
             this.time = time;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Job job = (Job) o;
+            return id == job.id &&
+                    time == job.time;
+        }
+
+        @Override
+        public int hashCode() {
+
+            return Objects.hash(id, time);
+        }
     }
 
     public static void fun3() {

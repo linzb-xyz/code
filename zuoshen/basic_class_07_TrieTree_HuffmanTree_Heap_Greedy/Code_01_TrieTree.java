@@ -1,19 +1,24 @@
 //package class_07;
 
+import java.util.HashMap;
+
 /**
+ * 前缀树\字典树\TrieTree
  * 一个字符串类型的数组arr1，另一个字符串类型的数组arr2。
  */
 public class Code_01_TrieTree {
 
 	public static class TrieNode {
-		public int path;
-		public int end;
+		public int path;    //有多少字符串到达过这个节点
+		public int end;     //有多少字符串一这个节点结尾
+
+        // public HashMap<Character, TrieNode> nexts;   nexts 表示该节点的子节点,也可以用 HashMap 实现
 		public TrieNode[] nexts;
 
 		public TrieNode() {
 			path = 0;
 			end = 0;
-			nexts = new TrieNode[26];
+			nexts = new TrieNode[26];   //26 个字母,最多 26 个子节点
 		}
 	}
 
